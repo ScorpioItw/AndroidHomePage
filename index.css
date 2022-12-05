@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.search_bar,
+#box_container,
+.title {
+    display: none;
+}
+
+#body {
+    width: 100vw;
+    height: 100vh;
+    /* background: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 3000px;
+}
+
+#background {
+    width: 100vw;
+    height: 100vh;
+    background: url(index.png) center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+}
+
+#base {
+    width: 80vw;
+    height: 80vh;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#time,
+#searchBox,
+#text {
+    width: 100%;
+    height: 15%;
+    margin-top: 25px;
+}
+
+#text {
+    position: absolute;
+    bottom: 2vh;
+    text-shadow: 0 0 20px rgb(0, 0, 0, 80%);
+    color: #fff;
+    font-size: small;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#text:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+    animation: text;
+    animation-duration: 0.5s;
+
+}
+
+@keyframes text {
+    0% {
+        transform: translate(0, 2px) rotate3d(1, 0, 0, -10deg);
+    }
+}
+
+.text-p {
+    text-align: center;
+    list-style: none;
+    flex-shrink: 1;
+    font-size: 5%;
+}
+
+.text-name {
+    margin-top: 3%;
+    margin-bottom: 1%;
+    text-align: right;
+    /* 去除圆点 */
+    list-style: none;
+    margin-right: 10%;
+    display: none;
+    flex-shrink: 100;
+    font-size: 5%;
+}
+
+#searchBox {
+    animation: searchBox;
+    animation-duration: 0.2s;
+    position: absolute;
+    width: 75%;
+    top: 35%;
+    left: 13%;
+    height: 6%;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 1px 1px 5px 0px #ccc;
+}
+
+#searchBigBox {
+    position: absolute;
+    top: 38.5%;
+    height: 6%;
+    width: 100%;
+    background-color: beige;
+    display: none;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 5px 0px #ccc;
+    animation: searchBoxBig;
+    animation-duration: 0.2s;
+}
+
+@keyframes searchBoxBig {
+
+    /* 放大效果 */
+    0% {
+        transform: scale(0.75, 1);
+    }
+
+    50% {
+        backdrop-filter: blur(8px);
+    }
+
+    100% {
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes searchBox {
+
+    /* 回弹效果 */
+    0% {
+        transform: scale(1.333, 1);
+    }
+}
+
+#search,
+#searchBig {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: transparent;
+    border: none;
+    /* border-bottom: 1px solid #ccc; */
+    /* padding-left: 5vw; */
+    text-align: center;
+}
+
+#searchBig {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 0;
+    outline: none;
+}
+
+#time {
+    position: absolute;
+    top: 25%;
+    font-size: 5vh;
+    text-align: center;
+    height: 6vh;
+    background-color: transparent;
+    color: #fff;
+}
+
+@media (min-width: 1000px) {
+    body {
+        display: none;
+    }
+}
